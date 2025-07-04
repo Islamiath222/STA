@@ -25,20 +25,20 @@ const About = () => {
       },
       mission: {
         title: 'Notre Mission',
-        text: 'Notre mission est de transformer des matières premières naturelles en produits alimentaires d\'exception, en préservant leur qualité nutritionnelle et leur saveur authentique. Nous nous engageons à respecter les normes les plus strictes en matière de sécurité alimentaire et de durabilité environnementale.'
+        text: ' Produire des aliments et des boissons naturels et nutritifs, en promouvant la consommation d’\ une alimentation saine pour tous.'
       },
       vision: {
         title: 'Notre Vision',
-        text: 'Devenir le leader régional de la transformation alimentaire en offrant des produits innovants, naturels et respectueux de l\'environnement. Nous aspirons à créer un avenir où l\'alimentation saine et savoureuse est accessible à tous.'
+        text: 'Devenir une entreprise agroalimentaire de premier plan reconnue pour la haute qualité de ses produits nutritifs.'
       },
       values: {
         title: 'Nos Valeurs Fondamentales',
         quality: {
-          title: 'Excellence Qualité',
+          title: 'Qualité',
           text: 'Nous sélectionnons rigoureusement nos matières premières et appliquons les standards de qualité les plus élevés à chaque étape de production.'
         },
         innovation: {
-          title: 'Innovation Continue',
+          title: 'Innovation',
           text: 'Nous investissons constamment dans la recherche et le développement pour améliorer nos procédés et créer de nouveaux produits.'
         },
         sustainability: {
@@ -50,8 +50,8 @@ const About = () => {
           text: 'Nous agissons avec transparence et honnêteté envers nos clients, partenaires et employés.'
         },
         tradition: {
-          title: 'Respect des Traditions',
-          text: 'Nous honorons les méthodes traditionnelles tout en les adaptant aux exigences modernes de qualité et de sécurité.'
+          title: 'Passion',
+          text: 'Nous mettons tout notre cœur dans la transformation des produits alimentaires afin d’offrir à chaque famille des aliments sains, savoureux et authentiques. Notre engagement profond se reflète dans la qualité, l\ ’innovation et le respect des traditions locales. '
         },
         team: {
           title: 'Esprit d\'Équipe',
@@ -61,8 +61,8 @@ const About = () => {
       differentiators: {
         title: 'Ce qui nous distingue',
         points: [
-          'Plus de 20 ans d\'expérience dans la transformation alimentaire',
-          'Certification ISO et respect des normes internationales de qualité',
+          'Des produits abordables, disponibles localement, avec un service client à l\'écoute des besoins des communautés.',
+          'Emballages durables, gestion responsable des ressources et sensibilisation à l\'environnement font partie de ses priorités.',
           'Traçabilité complète de nos produits de la source au consommateur',
           'Investissement continu dans les technologies de pointe',
           'Partenariats avec des producteurs locaux de confiance',
@@ -168,16 +168,19 @@ const About = () => {
       </div>
 
       {/* Header */}
-      <header className="bg-white shadow-md fixed w-full top-0 z-40">
+     <header className="bg-white shadow-md fixed w-full top-0 z-40">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center">
-            <div className="w-16 h-16 bg-orange-100 rounded-lg flex items-center justify-center mr-4">
-              <span className="text-orange-600 font-bold text-lg">LOGO</span>
-            </div>
-            <div>
-              <h1 className="text-xl font-bold text-gray-800">STA</h1>
-              <p className="text-sm text-gray-600">{language === 'fr' ? 'Transformation Alimentaire' : 'Food Processing'}</p>
-            </div>
+         <div className="h-full flex items-center mr-4">
+  <img
+    src="/images/Logo.png"
+    alt="STA Logo"
+    className="h-full max-h-14 w-auto object-contain"
+  />
+</div>
+
+
+
           </div>
 
           <nav className="hidden md:flex items-center space-x-8">

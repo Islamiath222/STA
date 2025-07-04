@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Facebook, Instagram, Linkedin, ArrowLeft } from 'lucide-react';
 
@@ -7,18 +7,39 @@ const Brands = () => {
   const [language, setLanguage] = useState('fr');
   const [activeImageFruitel, setActiveImageFruitel] = useState(0);
   const [activeImagePetitPlaisir, setActiveImagePetitPlaisir] = useState(0);
+  const [isPausedFruitel, setIsPausedFruitel] = useState(false);
+  const [isPausedPetitPlaisir, setIsPausedPetitPlaisir] = useState(false);
 
   const fruitelImages = [
-    'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1500673922987-e212871fec22?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
-  ];
+    "/images/fruteli.png",
+  "/images/fruitel1.png",
+  "/images/Fruitel2.png"
+];
+useEffect(() => {
+  const interval = setInterval(() => {
+    if (!isPausedFruitel) {
+      setActiveImageFruitel((prev) => (prev + 1) % fruitelImages.length);
+    }
+  }, 3000);
+  return () => clearInterval(interval);
+}, [isPausedFruitel, fruitelImages.length]);
+
+
 
   const petitPlaisirImages = [
-    'https://images.unsplash.com/photo-1582562124811-c09040d0a901?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
-  ];
+    "/images/PP2.png",
+  "/images/PP3.png",
+  "/images/PP1.png"
+];
+useEffect(() => {
+  const interval = setInterval(() => {
+    if (!isPausedPetitPlaisir) {
+      setActiveImagePetitPlaisir((prev) => (prev + 1) % petitPlaisirImages.length);
+    }
+  }, 3000);
+  return () => clearInterval(interval);
+}, [isPausedPetitPlaisir, petitPlaisirImages.length]);
+
 
   const translations = {
     fr: {
@@ -135,13 +156,16 @@ const Brands = () => {
       <header className="bg-white shadow-md fixed w-full top-0 z-40">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center">
-            <div className="w-16 h-16 bg-orange-100 rounded-lg flex items-center justify-center mr-4">
-              <span className="text-orange-600 font-bold text-lg">LOGO</span>
-            </div>
-            <div>
-              <h1 className="text-xl font-bold text-gray-800">STA</h1>
-              <p className="text-sm text-gray-600">{language === 'fr' ? 'Transformation Alimentaire' : 'Food Processing'}</p>
-            </div>
+          <div className="h-full flex items-center mr-4">
+  <img
+    src="/images/Logo.png"
+    alt="STA Logo"
+    className="h-full max-h-14 w-auto object-contain"
+  />
+</div>
+
+
+
           </div>
 
           <nav className="hidden md:flex items-center space-x-8">
@@ -211,7 +235,12 @@ const Brands = () => {
 
             <div className="order-1 lg:order-2">
               <div className="relative">
-                <div className="h-96 rounded-2xl overflow-hidden shadow-xl">
+                <div
+  className="h-96 rounded-2xl overflow-hidden shadow-xl"
+  onMouseEnter={() => setIsPausedFruitel(true)}
+  onMouseLeave={() => setIsPausedFruitel(false)}
+>
+
                   {fruitelImages.map((image, index) => (
                     <div
                       key={index}
@@ -249,7 +278,12 @@ const Brands = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <div className="relative">
-                <div className="h-96 rounded-2xl overflow-hidden shadow-xl">
+                <div
+  className="h-96 rounded-2xl overflow-hidden shadow-xl"
+  onMouseEnter={() => setIsPausedPetitPlaisir(true)}
+  onMouseLeave={() => setIsPausedPetitPlaisir(false)}
+>
+
                   {petitPlaisirImages.map((image, index) => (
                     <div
                       key={index}

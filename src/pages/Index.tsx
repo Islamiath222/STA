@@ -1,17 +1,19 @@
 
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Facebook, Instagram, Linkedin } from 'lucide-react';
+import { Facebook, Instagram, Linkedin, } from 'lucide-react';
 
 const Index = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [language, setLanguage] = useState('fr');
 
-  const heroImages = [
-    'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80',
-    'https://images.unsplash.com/photo-1500673922987-e212871fec22?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80',
-    'https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80'
-  ];
+  
+ const heroImages = [
+  "/images/fruits.png",
+  "/images/PP6.jpg",
+  "/images/PP4.png"
+];
+
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -36,7 +38,7 @@ const Index = () => {
       },
       welcome: {
         title: 'Bienvenue chez STA',
-        text: 'Depuis des années, STA s\'engage à transformer et emballer des produits alimentaires de la plus haute qualité sous nos marques Fruitel et Petit Plaisir. Notre mission est de vous offrir des produits naturels, frais et savoureux.'
+        text: 'STA s\'engage à transformer et emballer des produits alimentaires de la plus haute qualité sous nos marques Fruitel et Petit Plaisir. Notre mission est de vous offrir des produits naturels, frais et savoureux.'
       },
       brands: {
         title: 'Nos Marques',
@@ -60,7 +62,7 @@ const Index = () => {
           text: 'Sans conservateurs ni additifs artificiels'
         },
         trust: {
-          title: 'Confiance',
+          title: 'Transparence',
           text: 'Transparence et traçabilité à chaque étape'
         }
       },
@@ -150,17 +152,20 @@ const Index = () => {
       </div>
 
       {/* Header */}
-      <header className="bg-white shadow-md fixed w-full top-0 z-40">
+     <header className="bg-white shadow-md fixed w-full top-0 z-40">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          {/* Logo Placeholder */}
           <div className="flex items-center">
-            <div className="w-16 h-16 bg-orange-100 rounded-lg flex items-center justify-center mr-4">
-              <span className="text-orange-600 font-bold text-lg">LOGO</span>
-            </div>
-            <div>
-              <h1 className="text-xl font-bold text-gray-800">STA</h1>
-              <p className="text-sm text-gray-600">{language === 'fr' ? 'Transformation Alimentaire' : 'Food Processing'}</p>
-            </div>
+         <div className="h-full flex items-center mr-4">
+  <img
+    src="/images/Logo.png"
+    alt="STA Logo"
+    className="h-full max-h-14 w-auto object-contain"
+  />
+</div>
+
+
+
+           
           </div>
 
           {/* Navigation */}

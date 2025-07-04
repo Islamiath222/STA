@@ -42,11 +42,11 @@ const Contact = () => {
       info: {
         title: 'Informations de contact',
         address: 'Adresse',
-        addressValue: '123 Rue de l\'Industrie, 12345 Ville, Pays',
+        addressValue: 'Qtier Ganou, Parakou - Bénin',
         phone: 'Téléphone',
-        phoneValue: '+33 1 23 45 67 89',
+        phoneValue: '+229 01 97 79 46 25',
         email: 'E-mail',
-        emailValue: 'contact@sta-company.com',
+        emailValue: 'sta.petitplaisir@gmail.com',
         hours: 'Heures d\'ouverture',
         hoursValue: 'Lun - Ven: 8h00 - 18h00'
       }
@@ -79,11 +79,11 @@ const Contact = () => {
       info: {
         title: 'Contact Information',
         address: 'Address',
-        addressValue: '123 Industry Street, 12345 City, Country',
+        addressValue: 'Qtier Ganou, Parakou - Bénin',
         phone: 'Phone',
-        phoneValue: '+33 1 23 45 67 89',
+        phoneValue: '+229 01 97 79 46 25',
         email: 'Email',
-        emailValue: 'contact@sta-company.com',
+        emailValue: 'sta.petitplaisir@gmail.com',
         hours: 'Business Hours',
         hoursValue: 'Mon - Fri: 8:00 AM - 6:00 PM'
       }
@@ -134,7 +134,7 @@ const Contact = () => {
       {/* Fixed Social Media Icons */}
       <div className="fixed left-4 top-1/2 transform -translate-y-1/2 z-50 flex flex-col gap-4">
         <a 
-          href="https://facebook.com" 
+          href="https://www.facebook.com/PetitPlaisir" 
           target="_blank" 
           rel="noopener noreferrer"
           className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center text-white hover:bg-orange-600 hover:scale-110 transition-all duration-300 shadow-lg"
@@ -160,16 +160,18 @@ const Contact = () => {
       </div>
 
       {/* Header */}
-      <header className="bg-white shadow-md fixed w-full top-0 z-40">
+     <header className="bg-white shadow-md fixed w-full top-0 z-40">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center">
-            <div className="w-16 h-16 bg-orange-100 rounded-lg flex items-center justify-center mr-4">
-              <span className="text-orange-600 font-bold text-lg">LOGO</span>
-            </div>
-            <div>
-              <h1 className="text-xl font-bold text-gray-800">STA</h1>
-              <p className="text-sm text-gray-600">{language === 'fr' ? 'Transformation Alimentaire' : 'Food Processing'}</p>
-            </div>
+         <div className="h-full flex items-center mr-4">
+  <img
+    src="/images/Logo.png"
+    alt="STA Logo"
+    className="h-full max-h-14 w-auto object-contain"
+  />
+</div>
+
+
           </div>
 
           <nav className="hidden md:flex items-center space-x-8">
